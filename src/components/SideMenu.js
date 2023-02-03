@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import user from '../assets/user.jpg'
 import MenuItem from './MenuItem'
+import { Alert } from '@material-ui/lab/Alert';
 
 
 // added more menuItems for testing
@@ -23,10 +24,10 @@ export const menuItems = [
     exact: true,
     to: `/DeviceReport`,
     iconClassName: 'bi-people-fill',
-    subMenus: [
-      { name: 'Adduser', to: '/ClientManagement/Adduser' , exact: true,subMenusiconClassName: 'bi-people-fill'},
-      { name: 'uses', to: '/ClientManagement/uses' },
-    ],
+    // subMenus: [
+    //   { name: 'Adduser', to: '/ClientManagement/Adduser' , exact: true,subMenusiconClassName: 'bi-people-fill'},
+    //   { name: 'uses', to: '/ClientManagement/uses' },
+    // ],
   },
   {
     name: 'Manage Gateway',
@@ -64,6 +65,15 @@ const SideMenu = (props) => {
       el.classList.remove('active')
     })
   }
+
+  const OnClickLogOut = ()=> {
+    alert("Your logout!")
+  }
+
+//   OnClickLogOut: function() {
+//     alert("Your logout!")
+// }
+
 
   useEffect(() => {
     let menuItems = document.querySelectorAll('.menu-item')
@@ -145,16 +155,16 @@ const SideMenu = (props) => {
         </ul>
       </div>
       
-      <div className="side-menu-footer">
+      <div className="side-menu-footer" >
         
-        <div  className="avatar">
+        <div  className="avatar" >
           
           
           
-          <img src={user} alt="user" />
+          <img    src={user} alt="user"  />
         </div>
-        <div className="user-info">
-          <h5>AthiSankar</h5>
+        <div  className="user-info" >
+          <h5 >AthiSankar</h5>
           {/* <div className="search-controller">
         <button className="logout-btn">
         <i class="bi-box-arrow-left"></i>
@@ -162,15 +172,8 @@ const SideMenu = (props) => {
         </button> */}
         {/* </div> */}
         
-
-          <p>athisankar@gmail.com</p>
-
-          
-          
-          
-
-
-          
+        {/* onClick = {OnClickLogOut()} */}
+          <p >athisankar@gmail.com</p>
         </div>
         
       </div>

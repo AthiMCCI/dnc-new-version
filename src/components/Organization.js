@@ -57,7 +57,7 @@ const api = axios.create({
 function Dashboard() {
 
   var columns = [
-    {title: "Avatar", render: rowData => <Avatar maxInitials={1} size={40} round={true} name={rowData === undefined ? " " : rowData.first_name} />  },
+    // {title: "Avatar", render: rowData => <Avatar maxInitials={1} size={40} round={true} name={rowData === undefined ? " " : rowData.first_name} />  },
     {title: " name", field: "first_name"},
     {title: "Devices", field: "id"},
     {title: "Users", field: "id"},
