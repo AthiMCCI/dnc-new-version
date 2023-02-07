@@ -7,6 +7,9 @@ import GateWay from './components/Gateway';
 import Organization from './components/Organization';
 import DeviceReport from './components/DeviceReport';
 import ManageGateway from './components/ManageGateway';
+import ForgotPasswordPage from './components/ForgotPasswordPage';
+import LoginPage from './components/LoginPage'
+
 
 
 function App() {
@@ -39,17 +42,24 @@ function App() {
           ))}
 
           { <Switch>
-            <Route exact path={"/Dashboard"}>
+            <Route  path = {"/LoginPage"}>
+              <LoginPage />
+              </Route>
+              <Route  path = {"/ForgotPasswordPage"}>
+              <ForgotPasswordPage />
+              </Route>
+
+            <Route  path={"/Dashboard"}>
               <Dashboard />
             </Route>
-            <Route exact path={"/Organization"}>
+            <Route path={"/Organization"}>
               <Organization />
             </Route>
           
             <Route path={"/DeviceReport"}>
               <DeviceReport />
             </Route>
-            <Route exact path={"/ManageGateway"}>
+            <Route  path={"/ManageGateway"}>
               <ManageGateway />
             </Route>
             <Route path={"/Gateway"}>

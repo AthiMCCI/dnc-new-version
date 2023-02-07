@@ -49,6 +49,7 @@ export const menuItems = [
   // },
 ]
 
+
 const SideMenu = (props) => {
   const [inactive, setInactive] = useState(false)
 
@@ -65,14 +66,12 @@ const SideMenu = (props) => {
       el.classList.remove('active')
     })
   }
+  const imageClick = () => {
+    console.log('Click');
+  } 
 
-  const OnClickLogOut = ()=> {
-    alert("Your logout!")
-  }
-
-//   OnClickLogOut: function() {
-//     alert("Your logout!")
-// }
+  
+  
 
 
   useEffect(() => {
@@ -132,50 +131,25 @@ const SideMenu = (props) => {
             />
           ))}
 
-          {/* <li>
-            <a className="menu-item">
-              <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
-              </div>
-              <span>Dashboard</span>
-            </a>
-          </li>
-          <MenuItem
-            name={"Content"}
-            subMenus={[{ name: "Courses" }, { name: "Videos" }]}
-          />
-          <li>
-            <a className="menu-item">
-              <div className="menu-icon">
-                <i class="bi bi-vector-pen"></i>
-              </div>
-              <span>Design</span>
-            </a>
-          </li> */}
+         
         </ul>
       </div>
       
+      
       <div className="side-menu-footer" >
+        
         
         <div  className="avatar" >
           
           
           
-          <img    src={user} alt="user"  />
+          <img src={user} alt="user" onClick={() => alert('image')} />  
         </div>
         <div  className="user-info" >
-          <h5 >AthiSankar</h5>
-          {/* <div className="search-controller">
-        <button className="logout-btn">
-        <i class="bi-box-arrow-left"></i>
-        
-        </button> */}
-        {/* </div> */}
-        
-        {/* onClick = {OnClickLogOut()} */}
+          <h5  >AthiSankar</h5>
           <p >athisankar@gmail.com</p>
-        </div>
-        
+         
+        </div> 
       </div>
     </div>
   )
