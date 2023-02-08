@@ -3,6 +3,7 @@ import "../App.css";
 import { Button, Table, Modal, Input } from "antd";
 import { useState } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { BrowserRouter as Link,NavLink } from 'react-router-dom'
 
 
 function ManageGateway() {
@@ -158,8 +159,11 @@ function ManageGateway() {
   };
   return (
     <div classID="App">
+      <div className='gateway'>
+<NavLink activeClassName="gateway" to="/Addgateway">Add GateWay</NavLink>
+    </div>
       <header classID="App-header">
-        <Button onClick={onGateway}>Add a Gateway</Button>
+       
         <Table columns={columns} dataSource={dataSource}></Table>
         <Modal
           title="Edit gateway"
@@ -207,6 +211,7 @@ function ManageGateway() {
           />
         </Modal>
       </header>
+      
     </div>
   );
 }

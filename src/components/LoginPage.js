@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 import "../App.css";
 
@@ -32,7 +32,7 @@ function LoginPage () {
             </form>
             <footer>
                  <Link to="/register">Sign Up</Link>
-                {/* <p><Link to="/login">Back to Homepage</Link>.</p> */}
+             <p><Link to="/login">Back to Homepage</Link>.</p> 
             </footer>
         </div>
     )

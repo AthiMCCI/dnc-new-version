@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
 import { forwardRef } from 'react';
+import { Button, Table, Modal, Input } from "antd";
 import Avatar from 'react-avatar';
 import Grid from '@material-ui/core/Grid'
+import { BrowserRouter as Link,NavLink } from 'react-router-dom'
 
 import MaterialTable from "material-table";
 import AddBox from '@material-ui/icons/AddBox';
@@ -22,6 +24,7 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import axios from 'axios'
 import Alert from '@material-ui/lab/Alert';
+
 
 
 const tableIcons = {
@@ -49,10 +52,7 @@ const api = axios.create({
 })
 
 
-// function validateUsers(Users){
-//   const re = /^((?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\]))$/;
-//   return re.test(String(Users).toLowerCase());
-// }
+
 
 function Dashboard() {
 
@@ -187,12 +187,19 @@ function Dashboard() {
         setIserror(true)
         resolve()
       })
+      
   }
+  
 
 
   return (
     <div className="App">
-      
+
+<div className='gateway'>
+<NavLink activeClassName="gateway" to="/Addorganization">Add Organization</NavLink>
+    </div>
+    
+
       <Grid container spacing={1}>
           <Grid item xs={10}></Grid>
           <Grid item xs={11}>
@@ -205,6 +212,7 @@ function Dashboard() {
               </Alert>
             }       
           </div>
+     
             <MaterialTable
               title="Organization"
               columns={columns}
@@ -217,10 +225,7 @@ function Dashboard() {
                       handleRowUpdate(newData, oldData, resolve);
                       
                   }),
-                onRowAdd: (newData) =>
-                  new Promise((resolve) => {
-                    handleRowAdd(newData, resolve)
-                  }),
+               
                 onRowDelete: (oldData) =>
                   new Promise((resolve) => {
                     handleRowDelete(oldData, resolve)

@@ -45,7 +45,7 @@ section {
     margin-left: 20px;
 }
 .card:hover {
-    border-color: blue;
+    border-color: black;      
 }
 .btn {
     border: none;
@@ -62,7 +62,7 @@ section {
     margin-top: 50px;
     cursor: pointer;
     transition: .3s;
-    border: 10px solid black;
+    border: 10px solid lightblue;
 }
 .btn:hover {
     background: transparent;
@@ -74,6 +74,28 @@ section {
         flex: 0 0 100%;
         max-width: 100%;
     }
+}
+.gateway{
+    border: none;
+    color: white ; 
+    outline: none;
+    background:whitesmoke;
+    border-radius: 50px;
+    max-width: 130px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    cursor: pointer;
+    transition: .3s;
+    border: 5px solid lightblue;
+}
+.gateway:hover {
+    border-color: red;  
+    text-decoration: white; 
+     
 }
 
 
@@ -355,6 +377,24 @@ body{
     cursor: pointer;
     text-transform: capitalize
 }
+.profile {
+
+    margin-left: 7px;
+    color: orange;
+ 
+}
+
+.logout {
+    margin-top: -70px;
+    padding-left: 160px;
+    font-size: 3.5rem;
+    color: white;
+    
+       
+
+}
+  
+
 
 /***    Landing Page     ***/
 .main-title,

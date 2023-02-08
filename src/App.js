@@ -1,6 +1,6 @@
 import './App.css'
 import SideMenu, { menuItems } from './components/SideMenu'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route,Link } from 'react-router-dom'
 import { useState } from 'react'
 import Dashboard from './components/Dashboard';
 import GateWay from './components/Gateway';
@@ -8,7 +8,9 @@ import Organization from './components/Organization';
 import DeviceReport from './components/DeviceReport';
 import ManageGateway from './components/ManageGateway';
 import ForgotPasswordPage from './components/ForgotPasswordPage';
-import LoginPage from './components/LoginPage'
+import Addgateway from './components/Addgateway';
+import Addorganization from './components/Addorganization';
+import LoginPage from './components/LoginPage';
 
 
 
@@ -42,9 +44,11 @@ function App() {
           ))}
 
           { <Switch>
-            <Route  path = {"/LoginPage"}>
+            
+            <Route  path={"/LoginPage"}>
               <LoginPage />
-              </Route>
+            </Route>
+            
               <Route  path = {"/ForgotPasswordPage"}>
               <ForgotPasswordPage />
               </Route>
@@ -64,6 +68,12 @@ function App() {
             </Route>
             <Route path={"/Gateway"}>
               <GateWay />
+            </Route>
+            <Route path={"/Addgateway"}>
+              <Addgateway />
+            </Route>
+            <Route path={"/Addorganization"}>
+              <Addorganization />
             </Route>
             
           </Switch> }

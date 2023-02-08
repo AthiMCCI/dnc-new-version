@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import user from '../assets/user.jpg'
 import MenuItem from './MenuItem'
 import { Alert } from '@material-ui/lab/Alert';
+import { Link } from 'react-router-dom'
 
 
 // added more menuItems for testing
@@ -66,9 +67,32 @@ const SideMenu = (props) => {
       el.classList.remove('active')
     })
   }
-  const imageClick = () => {
-    console.log('Click');
-  } 
+  const dropdownRef = useRef(null); // Create a reference for dropdown container
+  const [isMenuDropDownOpen, setMenuDropDownOpen] = useState(false);
+  const closeHoverMenu = () => {
+    setMenuDropDownOpen(false);
+  };
+
+  useOnHoverOutside(dropdownRef, closeHoverMenu); 
+   function useOnHoverOutside(ref, handler) {
+    useEffect(
+      () => {
+        const listener = (event) => {
+          if (!ref.current || ref.current.contains(event.target)) {
+            return;
+          }
+          handler(event);
+        };
+        document.addEventListener("mouseover", listener);
+        return () => {
+          document.removeEventListener("mouseout", listener);
+        };
+      },
+      [ref, handler]
+    );
+  }
+  
+ 
 
   
   
@@ -139,15 +163,47 @@ const SideMenu = (props) => {
       <div className="side-menu-footer" >
         
         
-        <div  className="avatar" >
+        <div  className="avatar">
+        {/* <div className="dropdown-menu">
+                <a href>Item 1</a>
+                <a href>Item 2</a>
+                <a href>Item 3</a>
+            </div> */}
+                    
+          
+          
+          <img src={user} alt="user" onClick={() => alert('image')}  />
+          {/* <button
+              class="text-dark-grey-100"
+              onMouseOver={() => setMenuDropDownOpen(true)} 
+            >
+              Hover Menu
+            </button>
+            
+
+            {isMenuDropDownOpen}
+             */}
           
           
           
-          <img src={user} alt="user" onClick={() => alert('image')} />  
+          
+          
         </div>
+
+
+
         <div  className="user-info" >
-          <h5  >AthiSankar</h5>
+       
           <p >athisankar@gmail.com</p>
+          <Link className="profile" to="/register">Edit Profile</Link> 
+          
+
+          <div className="logout"  onClick={() => alert('are you sure you want to logout')}>
+          <i  class="bi-box-arrow-left" ></i>
+          </div>
+          
+          
+          
          
         </div> 
       </div>
