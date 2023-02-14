@@ -1,24 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 import { forwardRef } from 'react';
-import {  Table, Modal, Input } from "antd";
+import { Button, Table, Modal, Input } from "antd";
 import Avatar from 'react-avatar';
 import Grid from '@material-ui/core/Grid'
-import {NavLink } from 'react-router-dom'
+import { BrowserRouter as Link,NavLink } from 'react-router-dom'
 import '../App.css';
-import {AppBar,Toolbar,makeStyles} from "@material-ui/core";
-import Button from '@mui/material/Button';
-import {
-  
-
-  CssBaseline,
-  Typography,
-  
-} from "@material-ui/core";
-import { Link } from "react-router-dom";
-
-
-import { Link as RouterLink } from "react-router-dom";
 
 import MaterialTable from "material-table";
 import AddBox from '@material-ui/icons/AddBox';
@@ -38,34 +25,6 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 import axios from 'axios'
 import Alert from '@material-ui/lab/Alert';
-import GateWay from './Gateway';
-
-const useStyles = makeStyles((theme) => ({
-  navlinks: {
-    marginLeft: theme.spacing(-20),
-    display: "flex",
-     position:"static",   
-     
-     alignitems: "center",
-     padding: "-20px 0px"
-  },
-  
-  link: {
-    textDecoration: "none",
-    color: "black",
-    fontSize: "20px",
-    marginLeft: theme.spacing(28),
-    width:"100%",
-    position:"static",
-
-
-
-    "&:hover": {
-      color: "orange",
-      borderBottom: "1px solid red",
-    },
-  },
-}));
 
 
 
@@ -96,20 +55,16 @@ const api = axios.create({
 
 
 
-
 function Dashboard() {
-  const classes = useStyles();
-  
 
   var columns = [
     // {title: "Avatar", render: rowData => <Avatar maxInitials={1} size={40} round={true} name={rowData === undefined ? " " : rowData.first_name} />  },
-    {title: " name", field: "first_name"},
-    {title: "Devices", field: "id"},
-    {title: "Users", field: "id"},
-    {title: "Tags", field: "id"},
-    {title: "Gateways", field: "id"},
-    {title: "Grafanalink", field: "link"},
-    {title: "id", field: "id", hidden: true},
+    
+    {title: " Login", field: "admin"},
+    {title: " Name", field: "first_name"},
+    {title: "Email", field: "email"},
+    {title: "Last active", field: "Online"},
+   
 
   ]
   const [data, setData] = useState([]); //table data
@@ -134,7 +89,7 @@ function Dashboard() {
     // if(newData.name === ""){
     //   errorList.push("Please enter name")
     // }
-    // if(newData.Devices === ""){
+    // if(newData.Login === ""){
     //   errorList.push("Please enter Device name")
     // }
     // if(newData.Users === "" ){
@@ -176,11 +131,11 @@ function Dashboard() {
     if(newData.name === undefined){
       errorList.push("Please enter name")
     }
-    if(newData.Devices === undefined){
-      errorList.push("Please enter a Devices")
+    if(newData.Login === undefined){
+      errorList.push("Please enter a Name")
     }
     if(newData.Users === undefined){
-      errorList.push("Please enter a valid Users")
+      errorList.push("Please enter a Email")
     }
     if(newData.Tags === undefined){
         errorList.push("Please enter a Tags Number")
@@ -235,65 +190,13 @@ function Dashboard() {
       
   }
   
- 
+
 
   return (
-    
-   
-  
     <div className="App">
-      {/* <div>
-        <Button className="header" variant="contained" href="Preferences">
-      User
-      </Button>
-     
-      {' '}
-      {' '}
-      
-      <Button className="header" variant="contained" href="Preferences">
-    Orgs
-      </Button>
-      
-    {' '}
-    {}
-    
-      <Button className="header" variant="contained" href="Preferences">
-    Device
-      </Button>
-      
-     {"\n"}
-     {" \n"}
-      <Button  className="header" variant="contained" href="Preferences">
-      GateWay
-      </Button>
 
-</div> */}
-
-<AppBar position="static" style={{ background: 'lightblue', boxShadow: 'none',borderwidth: "1%"
- }}>
-      <CssBaseline />
-      <Toolbar>
-        
-          <div className={classes.navlinks}>
-            <Link to="Users" className={classes.link}>
-              User
-            </Link>
-            <Link to="/OrganizationOrgs" className={classes.link}>
-             Orgs
-            </Link>
-            <Link to="/Preferences" className={classes.link}>
-              Devices
-            </Link>
-            <Link to="/contact" className={classes.link}>
-              Gateways
-            </Link>
-            
-          </div>
-      </Toolbar>
-    </AppBar>
-      
 <div className='gateway'>
-<NavLink activeClassName="gateway" to="/Users"> + New Org</NavLink>
+<NavLink className="rrr" to="/Addnewuser"> Add User</NavLink>
     </div>
     
 
@@ -332,10 +235,7 @@ function Dashboard() {
           </Grid>
           <Grid item xs={3}></Grid>
         </Grid>
-        
-     
     </div>
-    
   );
 }
 

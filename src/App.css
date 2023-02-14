@@ -14,7 +14,9 @@ li{
     width: 100%;
     margin: auto;
     padding: 0px 20px;
+    
 }
+
 section {
     min-height: 50vh;
     display: flex;
@@ -45,7 +47,11 @@ section {
     margin-left: 20px;
 }
 .card:hover {
-    border-color: black;      
+    border-color: red;     
+    transform: skewX(0deg);
+  left: 20px;
+  width: calc(100% - 90px);
+background: linear-gradient(315deg, blue, lightblue) 
 }
 .btn {
     border: none;
@@ -77,9 +83,8 @@ section {
 }
 .gateway{
     border: none;
-    color: white ; 
     outline: none;
-    background:whitesmoke;
+    background: linear-gradient(315deg, lightgreen, lightblue) ;
     border-radius: 50px;
     max-width: 130px;
     width: 100%;
@@ -91,12 +96,15 @@ section {
     cursor: pointer;
     transition: .3s;
     border: 5px solid lightblue;
+    color: white ;
+    font-weight: 700;
+    
+ 
 }
-.gateway:hover {
-    border-color: red;  
-    text-decoration: white; 
-     
+ .gateway:hover {
+    border-color: blue;    
 }
+
 
 
 /* //Dashboard css ending */
@@ -385,16 +393,24 @@ body{
 }
 
 .logout {
-    margin-top: -70px;
-    padding-left: 160px;
-    font-size: 3.5rem;
-    color: white;
-    
-       
+    margin-top: -22px;
+    padding-left: 100px;
+    color: red;
+}
+
+/* organizationOrgs css components */
+.input {
+    color: blue;
+    width: 100%;
+    border-radius: 5px;
 
 }
-  
+.i {
+    margin-left: 1;
+    bottom:-10px;
+}
 
+  
 
 /***    Landing Page     ***/
 .main-title,
@@ -515,3 +531,68 @@ form span {
 }
 
 /* logincreen end */
+
+
+/* preferences */
+
+.text {
+    align-items:left;
+    width: 70%;
+    margin-left: 10px;  
+    
+}
+.text:hover {
+    
+    color: aqua; 
+}
+
+/* Adduser page */
+.disable {
+    background: linear-gradient(315deg, gray, lightgray) ;
+    bottom: -50px;
+    left: -680px;
+}
+.delete {
+    background: linear-gradient(315deg, black, black) ;
+    bottom: -50px;
+    left: -695px;
+}
+
+.header {
+    margin-top: 60px;
+}
+.grafanna {
+    /* background: linear-gradient(315deg, lightgray, lightgray) ; */
+    bottom: 50px;
+    left: -710px;
+    width: 100%;
+}
+.edit {
+    align-items:left;
+    margin-left: 10px;  
+    font-size: medium;
+    font-family:Helvetica;
+    margin-bottom: 10px;
+}
+.textfield {
+    width: 50%;
+    align-items:left;
+    margin-left: 10px;  
+}
+.save {
+    bottom: -10px;
+    left: 20px;
+}
+.cancel {
+    bottom: -10px;
+    left: 40px;
+}
+.remove {
+    align-items:left;
+    margin-left: 60px;  
+    font-size: medium;
+    font-family:Helvetica;
+    margin-bottom: 100px;
+    bottom: 1000px;
+    
+}

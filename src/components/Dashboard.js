@@ -30,10 +30,16 @@ function Dashboard(props) {
        
     ])
     return (
+        
     <div>
+        <h1> Welcome </h1>
+        
         <section>
+            
             <div  className="dash">
+                
                 <div className = "cards">
+                
                     { cards.map((card, i) => 
                     (
                     <div key = {i} className= "card">

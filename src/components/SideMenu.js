@@ -2,7 +2,8 @@ import React, { useEffect, useState,useRef } from 'react'
 import user from '../assets/user.jpg'
 import MenuItem from './MenuItem'
 import { Alert } from '@material-ui/lab/Alert';
-import { Link } from 'react-router-dom'
+import { Link,NavLink } from 'react-router-dom'
+
 
 
 // added more menuItems for testing
@@ -195,11 +196,11 @@ const SideMenu = (props) => {
         <div  className="user-info" >
        
           <p >athisankar@gmail.com</p>
-          <Link className="profile" to="/register">Edit Profile</Link> 
+          <Link className="profile" to="/Editprofile">Edit Profile</Link> 
           
 
-          <div className="logout"  onClick={() => alert('are you sure you want to logout')}>
-          <i  class="bi-box-arrow-left" ></i>
+          <div className="logout"  onClick={() => alert(' logout')}>
+          <NavLink activeClassName="linkText" to="/Dashboard">LogOut</NavLink>
           </div>
           
           

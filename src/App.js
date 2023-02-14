@@ -11,6 +11,11 @@ import ForgotPasswordPage from './components/ForgotPasswordPage';
 import Addgateway from './components/Addgateway';
 import Addorganization from './components/Addorganization';
 import LoginPage from './components/LoginPage';
+import OrganizationOrgs from './components/OrganizationOrgs';
+import Preferences from './components/Preferences';
+import Users from './components/Users';
+import Addnewuser from './components/Addnewuser';
+
 
 
 
@@ -56,6 +61,7 @@ function App() {
             <Route  path={"/Dashboard"}>
               <Dashboard />
             </Route>
+            
             <Route path={"/Organization"}>
               <Organization />
             </Route>
@@ -75,7 +81,19 @@ function App() {
             <Route path={"/Addorganization"}>
               <Addorganization />
             </Route>
-            
+            <Route path={"/OrganizationOrgs"}>
+              <OrganizationOrgs />
+            </Route>
+            <Route path={"/Preferences"}>
+              <Preferences />
+            </Route>     
+            <Route path={"/Users"}>
+              <Users />
+            </Route>  
+            <Route path={"/Addnewuser"}>
+              <Addnewuser />
+            </Route> 
+                      
           </Switch> }
           <Switch>
             </Switch>
