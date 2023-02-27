@@ -1,6 +1,6 @@
 import './App.css'
 import SideMenu, { menuItems } from './components/SideMenu'
-import { BrowserRouter as Router, Switch, Route,Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route,} from 'react-router-dom'
 import { useState } from 'react'
 import Dashboard from './components/Dashboard';
 import GateWay from './components/Gateway';
@@ -9,15 +9,23 @@ import DeviceReport from './components/DeviceReport';
 import ManageGateway from './components/ManageGateway';
 import ForgotPasswordPage from './components/ForgotPasswordPage';
 import Addgateway from './components/Addgateway';
-import Addorganization from './components/Addorganization';
 import LoginPage from './components/LoginPage';
 import OrganizationOrgs from './components/OrganizationOrgs';
 import Preferences from './components/Preferences';
 import Users from './components/Users';
-import Addnewuser from './components/Addnewuser';
+import Addnewuser from './components/Addnewuser'
+import ManageStock from './components/ManageStock';
+import AddHardware from './components/AddHardware';
 
 
 
+// const USER_TYPES = {
+//   PUBLIC : 'Public User',
+//   NORMAL_USER :"Normal User",
+//   ADMIN_USER : "Admin User"
+// } 
+
+// // const CURRENT_USER_TYPE = USER_TYPES.PUBLIC 
 
 function App() {
   const [inactive, setInactive] = useState(false)
@@ -48,55 +56,41 @@ function App() {
             </>
           ))}
 
-          { <Switch>
-            
-            <Route  path={"/LoginPage"}>
-              <LoginPage />
-            </Route>
-            
-              <Route  path = {"/ForgotPasswordPage"}>
-              <ForgotPasswordPage />
-              </Route>
-
-            <Route  path={"/Dashboard"}>
-              <Dashboard />
-            </Route>
-            
-            <Route path={"/Organization"}>
-              <Organization />
-            </Route>
-          
-            <Route path={"/DeviceReport"}>
-              <DeviceReport />
-            </Route>
-            <Route  path={"/ManageGateway"}>
-              <ManageGateway />
-            </Route>
-            <Route path={"/Gateway"}>
-              <GateWay />
-            </Route>
-            <Route path={"/Addgateway"}>
-              <Addgateway />
-            </Route>
-            <Route path={"/Addorganization"}>
-              <Addorganization />
-            </Route>
-            <Route path={"/OrganizationOrgs"}>
-              <OrganizationOrgs />
-            </Route>
-            <Route path={"/Preferences"}>
-              <Preferences />
-            </Route>     
-            <Route path={"/Users"}>
-              <Users />
-            </Route>  
-            <Route path={"/Addnewuser"}>
-              <Addnewuser />
-            </Route> 
-                      
-          </Switch> }
+        {
           <Switch>
-            </Switch>
+             <Route exact path= {"/"}> <LoginPage/>  </Route> 
+             <Route exact path="/login" component={ LoginPage } />  
+            
+            <Route  path = {"/ForgotPasswordPage"}> <ForgotPasswordPage /> </Route>
+
+            {/* <Route  path={"/Dashboard"} element = { <PublicElement>  <Dashboard /> </PublicElement> } > </Route> */}
+
+            <Route path={"/Dashboard"}> <Dashboard/> </Route>
+            
+            <Route path={"/Organization"}> <Organization /> </Route>
+          
+            <Route path={"/DeviceReport"}> <DeviceReport /> </Route>
+            
+            <Route  path={"/ManageGateway"}> <ManageGateway /> </Route>
+            
+            <Route path={"/Gateway"}> <GateWay /> </Route>
+            
+            <Route path={"/Addgateway"}> <Addgateway /> </Route>
+
+            <Route path={"/OrganizationOrgs"}> <OrganizationOrgs /> </Route>
+            
+            <Route path={"/Preferences"}> <Preferences /> </Route>
+
+            <Route path={"/Users"}> <Users /> </Route>  
+            
+            <Route path={"/Addnewuser"}> <Addnewuser /> </Route> 
+
+            <Route  path={"/ManageStock"}> <ManageStock /> </Route>
+
+            <Route path={"/AddHardware"}> <AddHardware /> </Route>
+
+          </Switch> 
+        }
             
         </div>
       </Router>
@@ -104,12 +98,4 @@ function App() {
   )
 }
 
-export default App
-
-
-
-
-
-
-
-
+export default App;

@@ -3,12 +3,13 @@ import {useState} from 'react';
 import '../App.css';
 import { Button } from 'antd';
 
-
-function Dashboard(props) {
-    const [cards] = useState ([
+function Dashboard(props)
+{
+    const [cards] = useState
+    ([
         {
             title : 'Gateways',
-            text :  'Online=5 , Offline=4'
+            text :  'Online=5 , Offline=4',
         },
 
         {
@@ -29,25 +30,19 @@ function Dashboard(props) {
         },
        
     ])
-    return (
-        
+    
+    return(
     <div>
         <h1> Welcome </h1>
-        
         <section>
-            
             <div  className="dash">
-                
                 <div className = "cards">
-                
-                    { cards.map((card, i) => 
-                    (
+                    {
+                    cards.map((card, i) => (
                     <div key = {i} className= "card">
-                        
                         <h3>{card.title}</h3>
                         <p>{card.text}</p>
-                        <Button className="btn"> view Details>> </Button>
-                        
+                        <Button  className="btn" href="Preferences" > view Details > </Button>
                     </div>
                     ))
                     }

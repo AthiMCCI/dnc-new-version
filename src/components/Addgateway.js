@@ -1,7 +1,4 @@
 import React from 'react';
-
-
-
 function Addgateway (props) {
     return (
         <div>

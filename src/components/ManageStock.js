@@ -3,105 +3,140 @@ import "../App.css";
 import { Table, Modal, Input } from "antd";
 import { useState } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
-import { BrowserRouter as NavLink } from 'react-router-dom'
+import {NavLink } from 'react-router-dom'
 
-function ManageGateway() {
+function ManageStock() {
   const [isEditing, setIsEditing] = useState(false);
   const [editingGateway, seteditingGateway] = useState(null);
   const [dataSource, setDataSource] = useState([
     {
       Sno: 1,
-      ID: "101154565",
-      NetworkType: "Sigfox",
-      Location: "Chennai",
-      Status : "Online",
-      Date:"02.01.2001",
-      Last:"02.01.2022",
-      org:"org-1"
+      hwid: "101154565",
+      BoardRev: "0.23",
+      FwVer: "1.2.0",
+      FwUpdatedOn : "12-10-2021",
+      Technology:"SigFox",
+      Network:"SigFox",
+      BandRegion:"US",
+      Date:"10-02-2022",
+      Action:"Added",
+      Reason:"New Deployment",
+      UpdatedBy :"UserName"
     },
     {
       Sno: 2,
-      ID: "1956475215",
-      NetworkType: "LoRaWAN",
-      Location: "Buffalo",
-      Status : "Online",
-      Date:"12.05.2011",
-      Last:"02.01.2022",
-      org:"org-2"
+      hwid: "1956475215",
+      BoardRev: "0.23",
+      FwVer: "1.2.0",
+      FwUpdatedOn : "12-10-2021",
+      Technology:"SigFox",
+      Network:"SigFox",
+      BandRegion:"US",
+      Date:"10-02-2022",
+      Action:"Added",
+      Reason:"Tech Change",
+      UpdatedBy :"UserName"
     },
     {
       Sno: 3,
-      ID: "1050549465",
-      NetworkType: "LoRaWAN",
-      Location: "Buffalo",
-      Status : "Offline",
-      Date:"10.11.2018",
-      Last:"21.01.2020",
-      org:"org-3"
+      hwid: "1050549465",
+      BoardRev: "0.23",
+      FwVer: "1.2.0",
+      FwUpdatedOn : "12-10-2021",
+      Technology:"LoraWAN",
+      Network:"SigFox",
+      BandRegion:"AU",
+      Date:"10-02-2022",
+      Action:"Removed",
+      Reason:"Network Change",
+      UpdatedBy :"UserName"
     },
     {
       Sno: 4,
-      ID: "1111057878",
-      NetworkType: "Sigfox",
-      Location: "Chennai",
-      Status : "Online",
-      Date:"30.01.2021",
-      Last:"25.01.2023",
-      org:"org-4"
+      hwid: "1111057878",
+      BoardRev: "0.23",
+      FwVer: "1.2.0",
+      FwUpdatedOn : "12-10-2021",
+      Technology:"LoraWAN",
+      Network:"SigFox",
+      BandRegion:"UK",
+      Date:"10-02-2022",
+      Action:"Added",
+      Reason:"New Deployment",
+      UpdatedBy :"UserName"
     },
   ]);
   const columns = [
     {
       key: "1",
       title: "Sno",
-      dataIndex: "Sno",
-    
+      dataIndex: "Sno"
     },
     
     {
       key: "2",
-      title: "ID",
-      dataIndex: "ID",
+      title: "hwid",
+      dataIndex: "hwid",
       
     },
     {
         key: "3",
-        title: "Installed-Date",
-        dataIndex: "Date",
+        title: "BoardRev:",
+        dataIndex: "BoardRev",
       
       },
     {
       key: "3",
-      title: "NetworkType",
-      dataIndex: "NetworkType",
+      title: "FwVer",
+      dataIndex: "FwVer",
      
     },
     {
       key: "4",
-      title: "Location",
-      dataIndex: "Location",
+      title: "FwUpdatedOn",
+      dataIndex: "FwUpdatedOn",
     
     },
     {
         key: "5",
-        title: "Last-Update",
-        dataIndex: "Last",
+        title: "Technology",
+        dataIndex: "Technology",
         
       },
-    {
-        key: "5",
-        title: "Status",
-        dataIndex: "Status",
+    
+      {
+        key: "6",
+        title: "Network",
+        dataIndex: "Network",
         
       },
       {
-        key: "5",
-        title: "Organization",
-        dataIndex: "org",
-        
+        key: "7",
+        title: "Band/Region",
+        dataIndex: "BandRegion",
+      },
+      {
+        key: "8",
+        title: "Date",
+        dataIndex: "Date",
+      },
+      {
+        key: "9",
+        title: "Action",
+        dataIndex: "Action",
+      },
+      {
+        key: "10",
+        title: "Reason",
+        dataIndex: "Reason",
+      },
+      {
+        key: "11",
+        title: "UpdatedBy",
+        dataIndex: "UpdatedBy",
       },
     {
-      key: "6",
+      key: "12",
       title: "Actions",
       render: (record) => {
         return (
@@ -161,7 +196,7 @@ function ManageGateway() {
   return (
     <div classID="App">
       <div className='gateway'>
-<NavLink activeClassName="gateway" to="/Addgateway">Add GateWay</NavLink>
+      <NavLink activeClassName="gateway" to="/AddHardware"> + Add Hardware</NavLink>
     </div>
       <header classID="App-header">
        
@@ -217,4 +252,4 @@ function ManageGateway() {
   );
 }
 
-export default ManageGateway;
+export default ManageStock;

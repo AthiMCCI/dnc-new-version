@@ -1,40 +1,54 @@
 *{
     margin: 0;
     padding: 0;
+    
 }
-ul{
+ul
+{
     padding: 0;
     margin: 0;
+    
 }
-li{
+
+li
+{
     list-style: none;
+    background: linear-gradient(315deg, white,orange)  ;
 }
-.dash {
+li:hover
+{  
+    transform: skewX(1deg);
+    width: calc(100% - 9px);
+    background: linear-gradient(315deg, white, white) ;
+}
+
+.dash
+{
     max-width: 1300px;
     width: 100%;
     margin: auto;
     padding: 0px 20px;
-    
 }
 
-section {
+section
+{
     min-height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.cards {
+
+.cards
+{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     font-size: large;
-    font-style: helvetica;
-    /* justify-content:last; */
-    /* margin-left: 30px; */
-   
-
+    font-style: helvetica
 }
-.card {
+
+.card
+{
     flex: 0 0 calc(33.33% - 20px);
     max-width: calc(33.33% - 20px);
     width: 100%;
@@ -46,14 +60,17 @@ section {
     border: 2px solid transparent;
     margin-left: 20px;
 }
-.card:hover {
+.card:hover
+{
     border-color: red;     
     transform: skewX(0deg);
-  left: 20px;
-  width: calc(100% - 90px);
-background: linear-gradient(315deg, blue, lightblue) 
+    left: 20px;
+    width: calc(100% - 90px);
+    background: linear-gradient(315deg, black, white) 
 }
-.btn {
+
+.btn
+{
     border: none;
     outline: none;
     background: blue;
@@ -75,13 +92,17 @@ background: linear-gradient(315deg, blue, lightblue)
     color: red;
 }
 
-@media (max-width: 600px){
-    .card {
+@media (max-width: 600px)
+{
+    .card 
+    {
         flex: 0 0 100%;
         max-width: 100%;
     }
 }
-.gateway{
+
+.gateway
+{
     border: none;
     outline: none;
     background: linear-gradient(315deg, lightgreen, lightblue) ;
@@ -98,79 +119,81 @@ background: linear-gradient(315deg, blue, lightblue)
     border: 5px solid lightblue;
     color: white ;
     font-weight: 700;
-    
- 
 }
  .gateway:hover {
     border-color: blue;    
 }
 
-
-
 /* //Dashboard css ending */
-body{
+body
+{
     background-color: lightgray;
     font-family: 'Open Sans', sans-serif;
 }
 
 /* width */
-::-webkit-scrollbar {
+::-webkit-scrollbar
+{
     width: 3px;
-  }
+}
   
   /* Track */
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track 
+{
     box-shadow: inset 0 0 5px grey; 
     border-radius: 10px;
     display: none;
-  }
+}
    
   /* Handle */
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb
+{
     background: #333; 
     border-radius: 10px;
     display: none;
-  }
-  
+}
+
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover
+{
     background: #333; 
     display: block;
-  }
+}
 
-
-.side-menu{
+.side-menu
+{
     position: fixed;
-    background:lightblue;
+    background: linear-gradient(30deg,black, Orange,gray );
+    
     width: 300px;
     height: 100%;
     box-sizing: border-box;
     padding: 30px 20px;
     transition: width .2s ease-in;
 }
-
-
-.side-menu.inactive{
+.side-menu.inactive
+{
     width: 80px;
 }
-
-.side-menu .top-section{
+.side-menu .top-section
+{
     position: relative;
 }
-
-.side-menu .top-section .logo{
+.side-menu .top-section .logo
+{
     width: 40px;
     height: 40px;
     overflow: hidden;
     display: inline-block;
 }
-.side-menu .top-section .logo img{
+.side-menu .top-section .logo img
+{
     max-width: 100%;
     max-height: 100%;
 }
-
-.side-menu .top-section .toggle-menu-btn{
-    color:blue;
+.side-menu .top-section .toggle-menu-btn
+{
+    color:black;
     font-size: 20px;
     position: absolute;
     top: 50%;
@@ -178,17 +201,16 @@ body{
     transform: translateY(-50%);
     cursor: pointer;
 }
-
-.side-menu.inactive .top-section .toggle-menu-btn{
+.side-menu.inactive .top-section .toggle-menu-btn
+{
     right: -50px;
 }
-
 .side-menu .search-controller{
     color: #fff;
     position: relative;
 }
-
-.side-menu .search-controller .search-btn{
+.side-menu .search-controller .search-btn
+{
     width: 40px;
     height: 35px;
     position: absolute;
@@ -197,9 +219,8 @@ body{
     font-size: 20px;
     color: #666;
 }
-
-
-.side-menu .search-controller input[type=text]{
+.side-menu .search-controller input[type=text]
+{
     border: 0;
     outline: none;
     height: 35px;
@@ -212,8 +233,8 @@ body{
     padding-left: 40px;
     color: #666;
 }
-
-.side-menu .main-menu .menu-item{
+.side-menu .main-menu .menu-item
+{
     color: #333;
     text-decoration: none;
     font-size: 15px;
@@ -221,27 +242,22 @@ body{
     font-weight: 600;
     cursor: pointer;
 }
-
-.side-menu .main-menu .menu-item.active{
+.side-menu .main-menu .menu-item.active
+{
     background: #333;
     border-radius: 5px;
     color: #fff;
 }
-
-
-.side-menu .main-menu{
+.side-menu .main-menu
+{
     margin: 5px 0;
     position: relative;
     max-height: 250px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
-/* not required any more */
-.side-menu.inactive .main-menu{
-   
-}
-
-.side-menu .main-menu .menu-item .menu-icon{
+.side-menu .main-menu .menu-item .menu-icon
+{
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -249,23 +265,23 @@ body{
     line-height: 40px;
     text-align: center;
 }
-
-.side-menu .main-menu .menu-item span{
+.side-menu .main-menu .menu-item span
+{
     position: absolute;
     display: inline-block;
     line-height: 40px;
     opacity: 1;
     transition: opacity .2s ease-in;
 }
-
-.side-menu.inactive .main-menu .menu-item span{
+.side-menu.inactive .main-menu .menu-item span
+{
     opacity: 0;
     width: 0;
     height: 0;
     overflow: hidden;
 }
-
-.side-menu .main-menu .sub-menu{
+.side-menu .main-menu .sub-menu
+{
     color: #333;
     margin-left: 20px;
     border-left: 1px solid #666;
@@ -275,14 +291,12 @@ body{
     overflow: hidden;
     transition: max-height .2s ease-in;
 }
-
-
-
-.side-menu .main-menu .sub-menu.active{
+.side-menu .main-menu .sub-menu.active
+{
     max-height: 200px;
 }
-
-.side-menu .main-menu .sub-menu a{
+.side-menu .main-menu .sub-menu a
+{
     display: block;
     margin: 5px 0;
     font-size: 15px;
@@ -292,40 +306,38 @@ body{
     box-sizing: border-box;
     padding: 5px;
 }
-
-
-.side-menu .main-menu .sub-menu a.active{
-    /* change in background, not recorded in video */
+.side-menu .main-menu .sub-menu a.active
+{
     background: #222;
     display: block;
-    
     border-radius: 5px;
     color: #fff;
-
 }
-
-.side-menu-footer{
+.side-menu-footer
+{
     width: 100%;
-    background: #333;
+    /* background: #333; */
+    background: linear-gradient(30deg,Orange,gray,black,gray,white);
     position: absolute;
     bottom: 0;
     left: 0;
     padding: 20px;
     box-sizing: border-box;
 }
-
-.side-menu-footer .avatar{
-    width: 40px;
+.side-menu-footer .avatar
+{
+    width: 50px;
     height: 40px;
     overflow: hidden;
     border-radius: 50%;
     display: inline-block;
 }
-.side-menu-footer .avatar img{
+.side-menu-footer .avatar img
+{
     max-width: 100%;
 }
-
-.side-menu-footer .user-info{
+.side-menu-footer .user-info
+{
     display: inline-block;
     margin: 0 10px;
     color: #fff;
@@ -333,46 +345,86 @@ body{
     opacity: 1;
     transition: opacity .2s ease-in;
 }
-
-.side-menu.inactive .side-menu-footer .user-info{
+.side-menu.inactive .side-menu-footer .user-info
+{
     opacity: 1;
     width: 0;
     height: 0;
     overflow: hidden;
 }
-
-
-.side-menu-footer .user-info h5{
+.side-menu-footer .user-info h5
+{
     font-size: 15px;
 }
-
-
-.side-menu-footer .user-info p{
+.side-menu-footer .user-info p
+{
     font-size: 14px;
 }
 
-.divider{
+/* profiledropdown */
+
+.menu-trigger img
+{
+    position: absolute;
+    top:20px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius:50%;
+    width: 40px;
+}
+
+.dropdown-menu
+{
+    position: absolute;
+    top:100px;
+    right: 20%;
+    background-color: #f3f3f3;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    width: 200px;
+}
+.dropdown-menu::before 
+{
+    content:'' ;
+    position: absolute;
+    top:-5px;
+    right: 20%;
+    background : var(--secoundry-bg);
+    transform: rotate(45deg);
+}
+.dropdown-menu ul li
+{
+    padding: 10px 0;
+    border-top : 1px solid rgba(red, green, blue, alpha)
+}
+.dropdown-menu ul li:hover
+{
+    color: rgb(red, green, blue);
+    cursor: pointer;
+}
+
+.divider
+{
     width: 100%;
     height: 1px;
     border-radius: 1px;
     background: #333;
 }
 
-.container{
+.container
+{
     margin-left: 300px;
     transition: margin-left .2s ease-in;
     padding: 50px;
     box-sizing: border-box;
 }
-
 .container.inactive{
     margin-left: 80px;
 }
 
-
-
 /* //login Screen */
-.primary-button {
+.primary-button 
+{
     margin-top: 5rem;
     margin-right: 1rem;
     padding: .6rem;
@@ -385,58 +437,58 @@ body{
     cursor: pointer;
     text-transform: capitalize
 }
-.profile {
-
+.profile
+{
     margin-left: 7px;
     color: orange;
- 
 }
 
-.logout {
+.logout
+{
     margin-top: -22px;
     padding-left: 100px;
     color: red;
 }
 
 /* organizationOrgs css components */
-.input {
+.input
+{
     color: blue;
     width: 100%;
     border-radius: 5px;
-
 }
-.i {
+
+.i 
+{
     margin-left: 1;
     bottom:-10px;
 }
 
-  
-
 /***    Landing Page     ***/
-.main-title,
-.main-para {
+.main-title,.main-para 
+{
     color: black
 }
-
 .main-title {
     padding-top: 10rem;
     font-size: 5rem;
     font-family: 'helvetica';
     text-transform: uppercase
 }
-
-.main-para {
+.main-para 
+{
     font-size: 2.5rem;
     text-Transform: capitalize
 }
 
-#reg_btn span {
+#reg_btn span
+{
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
-
-#reg_btn span:after {
+#reg_btn span:after 
+{
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -444,22 +496,24 @@ body{
     right: -20px;
     transition: 0.5s;
 }
-
-#reg_btn:hover span {
+#reg_btn:hover span
+{
   padding-right: 25px;
 }
-
-#reg_btn:hover span:after {
+#reg_btn:hover span:after
+{
   opacity: 1;
   right: 0;
 }
 
 /***    Login Page     ***/
-h2 {
+h2 
+{
     font-weight: 300
 }
 
-form {
+form
+{
     display: inline-block;
     background: #f3f3f3;
     border: 1px solid #ddd;
@@ -467,22 +521,23 @@ form {
     padding: 2rem;
     margin: 2rem 0 1rem 0
 }
-
-form label {
+form label 
+{
     float: left;
     font-size: .9rem;
     margin: 0;
     padding: 0
 }
 
-.right-label {
+.right-label
+{
     float: right;
     cursor: pointer;
     margin-top: -18px
-;
 }
 
-input {
+input
+{
     width: 15rem;
     padding: .3rem;
     border-radius: 5px;
@@ -490,7 +545,8 @@ input {
     border: none
 }
 
-#sub_btn {
+#sub_btn
+{
     display: block;
     width: 100%;
     padding: .3rem;
@@ -499,100 +555,113 @@ input {
     color: #fff;
     border-radius: 3px;
 }
-
-#sub_btn:hover {
+#sub_btn:hover 
+{
     background: #333;
     transition: all .5s
 }
 
-footer p {
+footer p
+{
     margin: 0;
     font-size: .9rem;
 }
 
 /***    Register Page     ***/
-#checkbox {
+#checkbox
+{
     width: 1rem;
     margin-top: -10px;
 }
 
-form span {
+form span 
+{
     font-size: .8rem
 }
 
-#reset_pass_lbl {
+#reset_pass_lbl
+{
     float: left
 }
 
 /***    Home Page     ***/
-.home-page-title {
+.home-page-title 
+{
     color: #222;
     background-color:lightgray;
 }
-
 /* logincreen end */
 
 
 /* preferences */
-
-.text {
+.text
+{
     align-items:left;
     width: 70%;
     margin-left: 10px;  
-    
 }
-.text:hover {
-    
+.text:hover
+{
     color: aqua; 
 }
 
 /* Adduser page */
-.disable {
+.disable
+{
     background: linear-gradient(315deg, gray, lightgray) ;
     bottom: -50px;
     left: -680px;
 }
-.delete {
+.delete
+{
     background: linear-gradient(315deg, black, black) ;
     bottom: -50px;
     left: -695px;
 }
 
-.header {
+.header 
+{
     margin-top: 60px;
 }
-.grafanna {
+.grafanna 
+{
     /* background: linear-gradient(315deg, lightgray, lightgray) ; */
     bottom: 50px;
     left: -710px;
     width: 100%;
 }
-.edit {
+.edit 
+{
     align-items:left;
     margin-left: 10px;  
     font-size: medium;
     font-family:Helvetica;
     margin-bottom: 10px;
 }
-.textfield {
+.textfield 
+{
     width: 50%;
     align-items:left;
     margin-left: 10px;  
 }
-.save {
+.save 
+{
+    background: linear-gradient(315deg, blue, black) ;
     bottom: -10px;
-    left: 20px;
+    left: 250px;
 }
-.cancel {
+.cancel 
+{
+    background: linear-gradient(315deg, blue, black) ;
     bottom: -10px;
-    left: 40px;
+    left: 500px;
 }
-.remove {
+.remove 
+{
     align-items:left;
     margin-left: 60px;  
     font-size: medium;
     font-family:Helvetica;
     margin-bottom: 100px;
     bottom: 1000px;
-    
 }
